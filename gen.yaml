@@ -1,4 +1,9 @@
 configVersion: 1.0.0
+management:
+  docChecksum: bd32215591e3a4d83fe2c9a136049547
+  docVersion: 1.0.0
+  speakeasyVersion: 1.56.0
+  generationVersion: 2.61.0
 generation:
   comments:
     disableComments: false
@@ -8,6 +13,6 @@ generation:
   singleTagPerOp: false
   tagNamespacingDisabled: false
 go:
-  version: 0.0.1
+  version: 1.0.0
   maxMethodParams: 0
   packageName: sendpost
