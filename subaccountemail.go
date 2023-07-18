@@ -9,6 +9,7 @@ import (
 	"io"
 	"net/http"
 	"sendpost/pkg/models/operations"
+	"sendpost/pkg/models/sdkerrors"
 	"sendpost/pkg/utils"
 	"strings"
 )
@@ -76,6 +77,8 @@ func (s *subaccountEmail) EmailRouterSendEmail(ctx context.Context, request oper
 		switch {
 		case utils.MatchContentType(contentType, `*/*`):
 			res.Body = rawBody
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		fallthrough
@@ -140,6 +143,8 @@ func (s *subaccountEmail) EmailRouterSendEmailWithTemplate(ctx context.Context, 
 		switch {
 		case utils.MatchContentType(contentType, `*/*`):
 			res.Body = rawBody
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		fallthrough

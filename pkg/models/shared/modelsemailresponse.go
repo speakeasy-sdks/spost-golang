@@ -9,3 +9,38 @@ type ModelsEmailResponse struct {
 	SubmittedAt *int64
 	To          *string
 }
+
+func (o *ModelsEmailResponse) GetErrorCode() *ModelsEmailErrorCode {
+	if o == nil {
+		return nil
+	}
+	return o.ErrorCode
+}
+
+func (o *ModelsEmailResponse) GetMessage() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Message
+}
+
+func (o *ModelsEmailResponse) GetMessageID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.MessageID
+}
+
+func (o *ModelsEmailResponse) GetSubmittedAt() *int64 {
+	if o == nil {
+		return nil
+	}
+	return o.SubmittedAt
+}
+
+func (o *ModelsEmailResponse) GetTo() *string {
+	if o == nil {
+		return nil
+	}
+	return o.To
+}

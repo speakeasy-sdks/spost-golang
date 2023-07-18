@@ -25,3 +25,108 @@ type ModelsEmailMessage struct {
 	TrackClicks *bool
 	TrackOpens  *bool
 }
+
+func (o *ModelsEmailMessage) GetAmpBody() *string {
+	if o == nil {
+		return nil
+	}
+	return o.AmpBody
+}
+
+func (o *ModelsEmailMessage) GetAttachments() []ModelsAttachment {
+	if o == nil {
+		return nil
+	}
+	return o.Attachments
+}
+
+func (o *ModelsEmailMessage) GetFrom() *ModelsFrom {
+	if o == nil {
+		return nil
+	}
+	return o.From
+}
+
+func (o *ModelsEmailMessage) GetGroups() *ModelsEmailMessageGroups {
+	if o == nil {
+		return nil
+	}
+	return o.Groups
+}
+
+func (o *ModelsEmailMessage) GetHeaders() *ModelsEmailMessageHeaders {
+	if o == nil {
+		return nil
+	}
+	return o.Headers
+}
+
+func (o *ModelsEmailMessage) GetHTMLBody() *string {
+	if o == nil {
+		return nil
+	}
+	return o.HTMLBody
+}
+
+func (o *ModelsEmailMessage) GetIppool() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Ippool
+}
+
+func (o *ModelsEmailMessage) GetPreText() *string {
+	if o == nil {
+		return nil
+	}
+	return o.PreText
+}
+
+func (o *ModelsEmailMessage) GetReplyTo() *ModelsReplyTo {
+	if o == nil {
+		return nil
+	}
+	return o.ReplyTo
+}
+
+func (o *ModelsEmailMessage) GetSubject() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Subject
+}
+
+func (o *ModelsEmailMessage) GetTemplate() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Template
+}
+
+func (o *ModelsEmailMessage) GetTextBody() *string {
+	if o == nil {
+		return nil
+	}
+	return o.TextBody
+}
+
+func (o *ModelsEmailMessage) GetTo() []ModelsTo {
+	if o == nil {
+		return nil
+	}
+	return o.To
+}
+
+func (o *ModelsEmailMessage) GetTrackClicks() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.TrackClicks
+}
+
+func (o *ModelsEmailMessage) GetTrackOpens() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.TrackOpens
+}

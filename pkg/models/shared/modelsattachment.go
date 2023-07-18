@@ -6,3 +6,17 @@ type ModelsAttachment struct {
 	Content  *string
 	Filename *string
 }
+
+func (o *ModelsAttachment) GetContent() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Content
+}
+
+func (o *ModelsAttachment) GetFilename() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Filename
+}

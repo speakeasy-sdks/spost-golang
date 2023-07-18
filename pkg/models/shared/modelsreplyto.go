@@ -6,3 +6,17 @@ type ModelsReplyTo struct {
 	Email *string
 	Name  *string
 }
+
+func (o *ModelsReplyTo) GetEmail() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Email
+}
+
+func (o *ModelsReplyTo) GetName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Name
+}

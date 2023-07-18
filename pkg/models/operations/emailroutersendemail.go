@@ -17,9 +17,65 @@ type EmailRouterSendEmailRequest struct {
 	XSubAccountAPIKey string `header:"style=simple,explode=false,name=X-SubAccount-ApiKey"`
 }
 
+func (o *EmailRouterSendEmailRequest) GetRequestBody() []byte {
+	if o == nil {
+		return []byte{}
+	}
+	return o.RequestBody
+}
+
+func (o *EmailRouterSendEmailRequest) GetXSendPostMockEmail() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.XSendPostMockEmail
+}
+
+func (o *EmailRouterSendEmailRequest) GetXSendPostMockTimeShift() *string {
+	if o == nil {
+		return nil
+	}
+	return o.XSendPostMockTimeShift
+}
+
+func (o *EmailRouterSendEmailRequest) GetXSubAccountAPIKey() string {
+	if o == nil {
+		return ""
+	}
+	return o.XSubAccountAPIKey
+}
+
 type EmailRouterSendEmailResponse struct {
 	Body        []byte
 	ContentType string
 	StatusCode  int
 	RawResponse *http.Response
+}
+
+func (o *EmailRouterSendEmailResponse) GetBody() []byte {
+	if o == nil {
+		return nil
+	}
+	return o.Body
+}
+
+func (o *EmailRouterSendEmailResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *EmailRouterSendEmailResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *EmailRouterSendEmailResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
 }

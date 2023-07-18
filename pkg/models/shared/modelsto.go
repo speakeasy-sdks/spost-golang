@@ -12,3 +12,38 @@ type ModelsTo struct {
 	Email        *string
 	Name         *string
 }
+
+func (o *ModelsTo) GetBcc() []ModelsCopyTo {
+	if o == nil {
+		return nil
+	}
+	return o.Bcc
+}
+
+func (o *ModelsTo) GetCc() []ModelsCopyTo {
+	if o == nil {
+		return nil
+	}
+	return o.Cc
+}
+
+func (o *ModelsTo) GetCustomFields() *ModelsToCustomFields {
+	if o == nil {
+		return nil
+	}
+	return o.CustomFields
+}
+
+func (o *ModelsTo) GetEmail() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Email
+}
+
+func (o *ModelsTo) GetName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Name
+}
