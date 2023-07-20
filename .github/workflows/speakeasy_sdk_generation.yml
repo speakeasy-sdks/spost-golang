@@ -19,11 +19,12 @@ jobs:
       force: ${{ github.event.inputs.force }}
       languages: |
         - go
-      mode: direct
+      mode: pr
       openapi_doc_auth_header: x-api-key
       openapi_docs: |
         - https://app.speakeasyapi.dev/v1/apis/sendpost/version/v1.0.0/schema/download
       speakeasy_version: latest
+      create_release: true
     secrets:
       github_access_token: ${{ secrets.GITHUB_TOKEN }}
       openapi_doc_auth_token: ${{ secrets.SPEAKEASY_API_KEY }}
