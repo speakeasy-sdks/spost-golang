@@ -4,8 +4,8 @@ package sendpost
 
 import (
 	"fmt"
+	"github.com/speakeasy-sdks/spost-golang/pkg/utils"
 	"net/http"
-	"sendpost/pkg/utils"
 	"time"
 )
 
@@ -108,8 +108,8 @@ func New(opts ...SDKOption) *Sendpost {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0.0",
-			SDKVersion:        "1.1.0",
-			GenVersion:        "2.70.0",
+			SDKVersion:        "1.1.1",
+			GenVersion:        "2.70.2",
 		},
 	}
 	for _, opt := range opts {

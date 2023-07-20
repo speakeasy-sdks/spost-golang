@@ -9,12 +9,12 @@ import (
 type EmailRouterSendEmailRequest struct {
 	// The Email Message
 	RequestBody []byte `request:"mediaType=*/*"`
+	// Sub-Account API Key
+	XSubAccountAPIKey string `header:"style=simple,explode=false,name=X-SubAccount-ApiKey"`
 	// Mock email header
 	XSendPostMockEmail *bool `header:"style=simple,explode=false,name=X-SendPost-Mock-Email"`
 	// Mock email time shift
 	XSendPostMockTimeShift *string `header:"style=simple,explode=false,name=X-SendPost-Mock-Time-Shift"`
-	// Sub-Account API Key
-	XSubAccountAPIKey string `header:"style=simple,explode=false,name=X-SubAccount-ApiKey"`
 }
 
 func (o *EmailRouterSendEmailRequest) GetRequestBody() []byte {
@@ -22,6 +22,13 @@ func (o *EmailRouterSendEmailRequest) GetRequestBody() []byte {
 		return []byte{}
 	}
 	return o.RequestBody
+}
+
+func (o *EmailRouterSendEmailRequest) GetXSubAccountAPIKey() string {
+	if o == nil {
+		return ""
+	}
+	return o.XSubAccountAPIKey
 }
 
 func (o *EmailRouterSendEmailRequest) GetXSendPostMockEmail() *bool {
@@ -36,13 +43,6 @@ func (o *EmailRouterSendEmailRequest) GetXSendPostMockTimeShift() *string {
 		return nil
 	}
 	return o.XSendPostMockTimeShift
-}
-
-func (o *EmailRouterSendEmailRequest) GetXSubAccountAPIKey() string {
-	if o == nil {
-		return ""
-	}
-	return o.XSubAccountAPIKey
 }
 
 type EmailRouterSendEmailResponse struct {

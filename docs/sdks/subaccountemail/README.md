@@ -17,21 +17,16 @@ package main
 import(
 	"context"
 	"log"
-	"sendpost"
-	"sendpost/pkg/models/operations"
-	"sendpost/pkg/models/shared"
+	"github.com/speakeasy-sdks/spost-golang"
+	"github.com/speakeasy-sdks/spost-golang/pkg/models/operations"
+	"github.com/speakeasy-sdks/spost-golang/pkg/models/shared"
 )
 
 func main() {
     s := sendpost.New()
 
     ctx := context.Background()
-    res, err := s.SubaccountEmail.EmailRouterSendEmail(ctx, operations.EmailRouterSendEmailRequest{
-        RequestBody: []byte("quibusdam"),
-        XSendPostMockEmail: sendpost.Bool(false),
-        XSendPostMockTimeShift: sendpost.String("unde"),
-        XSubAccountAPIKey: "nulla",
-    })
+    res, err := s.SubaccountEmail.EmailRouterSendEmail(ctx, []byte("quibusdam"), "unde", false, "nulla")
     if err != nil {
         log.Fatal(err)
     }
@@ -44,10 +39,13 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                            | :heavy_check_mark:                                                                               | The context to use for the request.                                                              |
-| `request`                                                                                        | [operations.EmailRouterSendEmailRequest](../../models/operations/emailroutersendemailrequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
+| Parameter                                             | Type                                                  | Required                                              | Description                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `ctx`                                                 | [context.Context](https://pkg.go.dev/context#Context) | :heavy_check_mark:                                    | The context to use for the request.                   |
+| `requestBody`                                         | *[]byte*                                              | :heavy_check_mark:                                    | The Email Message                                     |
+| `xSubAccountAPIKey`                                   | *string*                                              | :heavy_check_mark:                                    | Sub-Account API Key                                   |
+| `xSendPostMockEmail`                                  | **bool*                                               | :heavy_minus_sign:                                    | Mock email header                                     |
+| `xSendPostMockTimeShift`                              | **string*                                             | :heavy_minus_sign:                                    | Mock email time shift                                 |
 
 
 ### Response
@@ -67,19 +65,16 @@ package main
 import(
 	"context"
 	"log"
-	"sendpost"
-	"sendpost/pkg/models/operations"
-	"sendpost/pkg/models/shared"
+	"github.com/speakeasy-sdks/spost-golang"
+	"github.com/speakeasy-sdks/spost-golang/pkg/models/operations"
+	"github.com/speakeasy-sdks/spost-golang/pkg/models/shared"
 )
 
 func main() {
     s := sendpost.New()
 
     ctx := context.Background()
-    res, err := s.SubaccountEmail.EmailRouterSendEmailWithTemplate(ctx, operations.EmailRouterSendEmailWithTemplateRequest{
-        RequestBody: []byte("corrupti"),
-        XSubAccountAPIKey: "illum",
-    })
+    res, err := s.SubaccountEmail.EmailRouterSendEmailWithTemplate(ctx, []byte("corrupti"), "illum")
     if err != nil {
         log.Fatal(err)
     }
@@ -92,10 +87,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
-| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                                    | :heavy_check_mark:                                                                                                       | The context to use for the request.                                                                                      |
-| `request`                                                                                                                | [operations.EmailRouterSendEmailWithTemplateRequest](../../models/operations/emailroutersendemailwithtemplaterequest.md) | :heavy_check_mark:                                                                                                       | The request object to use for the request.                                                                               |
+| Parameter                                             | Type                                                  | Required                                              | Description                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `ctx`                                                 | [context.Context](https://pkg.go.dev/context#Context) | :heavy_check_mark:                                    | The context to use for the request.                   |
+| `requestBody`                                         | *[]byte*                                              | :heavy_check_mark:                                    | The Email Message                                     |
+| `xSubAccountAPIKey`                                   | *string*                                              | :heavy_check_mark:                                    | Sub-Account API Key                                   |
 
 
 ### Response
