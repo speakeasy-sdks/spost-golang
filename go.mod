@@ -1,4 +1,4 @@
-module sendpost
+module github.com/speakeasy-sdks/spost-golang
 
 go 1.14
 

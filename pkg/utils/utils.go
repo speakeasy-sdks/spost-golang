@@ -12,7 +12,7 @@ import (
 	"strings"
 	"time"
 
-	"sendpost/pkg/types"
+	"github.com/speakeasy-sdks/spost-golang/pkg/types"
 )
 
 const (

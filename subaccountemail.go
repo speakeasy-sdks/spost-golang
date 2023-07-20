@@ -6,11 +6,11 @@ import (
 	"bytes"
 	"context"
 	"fmt"
+	"github.com/speakeasy-sdks/spost-golang/pkg/models/operations"
+	"github.com/speakeasy-sdks/spost-golang/pkg/models/sdkerrors"
+	"github.com/speakeasy-sdks/spost-golang/pkg/utils"
 	"io"
 	"net/http"
-	"sendpost/pkg/models/operations"
-	"sendpost/pkg/models/sdkerrors"
-	"sendpost/pkg/utils"
 	"strings"
 )
 
@@ -25,7 +25,14 @@ func newSubaccountEmail(sdkConfig sdkConfiguration) *subaccountEmail {
 }
 
 // EmailRouterSendEmail - Send Email To Contacts
-func (s *subaccountEmail) EmailRouterSendEmail(ctx context.Context, request operations.EmailRouterSendEmailRequest) (*operations.EmailRouterSendEmailResponse, error) {
+func (s *subaccountEmail) EmailRouterSendEmail(ctx context.Context, requestBody []byte, xSubAccountAPIKey string, xSendPostMockEmail *bool, xSendPostMockTimeShift *string) (*operations.EmailRouterSendEmailResponse, error) {
+	request := operations.EmailRouterSendEmailRequest{
+		RequestBody:            requestBody,
+		XSubAccountAPIKey:      xSubAccountAPIKey,
+		XSendPostMockEmail:     xSendPostMockEmail,
+		XSendPostMockTimeShift: xSendPostMockTimeShift,
+	}
+
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/subaccount/email/"
 
@@ -91,7 +98,12 @@ func (s *subaccountEmail) EmailRouterSendEmail(ctx context.Context, request oper
 }
 
 // EmailRouterSendEmailWithTemplate - Send Email To Contacts With Template
-func (s *subaccountEmail) EmailRouterSendEmailWithTemplate(ctx context.Context, request operations.EmailRouterSendEmailWithTemplateRequest) (*operations.EmailRouterSendEmailWithTemplateResponse, error) {
+func (s *subaccountEmail) EmailRouterSendEmailWithTemplate(ctx context.Context, requestBody []byte, xSubAccountAPIKey string) (*operations.EmailRouterSendEmailWithTemplateResponse, error) {
+	request := operations.EmailRouterSendEmailWithTemplateRequest{
+		RequestBody:       requestBody,
+		XSubAccountAPIKey: xSubAccountAPIKey,
+	}
+
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url := strings.TrimSuffix(baseURL, "/") + "/subaccount/email/template"
 
