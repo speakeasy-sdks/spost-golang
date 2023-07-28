@@ -25,9 +25,13 @@ import(
 
 func main() {
     s := sendpost.New()
+    requestBody := []byte("corrupti")
+    xSubAccountAPIKey := "provident"
+    xSendPostMockEmail := false
+    xSendPostMockTimeShift := "distinctio"
 
     ctx := context.Background()
-    res, err := s.SubaccountEmail.EmailRouterSendEmail(ctx, []byte("corrupti"), "provident", false, "distinctio")
+    res, err := s.SubaccountEmail.EmailRouterSendEmail(ctx, requestBody, xSubAccountAPIKey, xSendPostMockEmail, xSendPostMockTimeShift)
     if err != nil {
         log.Fatal(err)
     }

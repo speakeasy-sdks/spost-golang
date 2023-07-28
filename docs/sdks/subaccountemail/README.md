@@ -24,9 +24,13 @@ import(
 
 func main() {
     s := sendpost.New()
+    requestBody := []byte("quibusdam")
+    xSubAccountAPIKey := "unde"
+    xSendPostMockEmail := false
+    xSendPostMockTimeShift := "nulla"
 
     ctx := context.Background()
-    res, err := s.SubaccountEmail.EmailRouterSendEmail(ctx, []byte("quibusdam"), "unde", false, "nulla")
+    res, err := s.SubaccountEmail.EmailRouterSendEmail(ctx, requestBody, xSubAccountAPIKey, xSendPostMockEmail, xSendPostMockTimeShift)
     if err != nil {
         log.Fatal(err)
     }
@@ -72,9 +76,11 @@ import(
 
 func main() {
     s := sendpost.New()
+    requestBody := []byte("corrupti")
+    xSubAccountAPIKey := "illum"
 
     ctx := context.Background()
-    res, err := s.SubaccountEmail.EmailRouterSendEmailWithTemplate(ctx, []byte("corrupti"), "illum")
+    res, err := s.SubaccountEmail.EmailRouterSendEmailWithTemplate(ctx, requestBody, xSubAccountAPIKey)
     if err != nil {
         log.Fatal(err)
     }
