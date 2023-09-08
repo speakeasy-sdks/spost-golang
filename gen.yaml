@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: bd32215591e3a4d83fe2c9a136049547
   docVersion: 1.0.0
-  speakeasyVersion: 1.75.0
-  generationVersion: 2.89.1
+  speakeasyVersion: 1.82.0
+  generationVersion: 2.107.0
 generation:
   comments:
     disableComments: false
@@ -14,10 +14,10 @@ generation:
   tagNamespacingDisabled: false
 features:
   go:
-    core: 2.85.0
+    core: 2.88.0
     flattening: 2.81.1
     globalServerURLs: 2.82.0
 go:
-  version: 1.3.0
+  version: 1.4.0
   maxMethodParams: 4
   packageName: github.com/speakeasy-sdks/spost-golang
