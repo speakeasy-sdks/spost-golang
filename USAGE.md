@@ -7,16 +7,20 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/spost-golang"
+	spostgolang "github.com/speakeasy-sdks/spost-golang"
 	"github.com/speakeasy-sdks/spost-golang/pkg/models/operations"
 	"github.com/speakeasy-sdks/spost-golang/pkg/models/shared"
 )
 
 func main() {
-    s := sendpost.New()
+    s := spostgolang.New()
+    requestBody := []byte("corrupti")
+    xSubAccountAPIKey := "provident"
+    xSendPostMockEmail := false
+    xSendPostMockTimeShift := "distinctio"
 
     ctx := context.Background()
-    res, err := s.SubaccountEmail.EmailRouterSendEmail(ctx, []byte("corrupti"), "provident", false, "distinctio")
+    res, err := s.SubaccountEmail.EmailRouterSendEmail(ctx, requestBody, xSubAccountAPIKey, xSendPostMockEmail, xSendPostMockTimeShift)
     if err != nil {
         log.Fatal(err)
     }

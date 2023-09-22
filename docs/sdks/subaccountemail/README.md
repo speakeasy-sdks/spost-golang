@@ -17,16 +17,20 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/spost-golang"
+	spostgolang "github.com/speakeasy-sdks/spost-golang"
 	"github.com/speakeasy-sdks/spost-golang/pkg/models/operations"
 	"github.com/speakeasy-sdks/spost-golang/pkg/models/shared"
 )
 
 func main() {
-    s := sendpost.New()
+    s := spostgolang.New()
+    requestBody := []byte("corrupti")
+    xSubAccountAPIKey := "illum"
+    xSendPostMockEmail := false
+    xSendPostMockTimeShift := "vel"
 
     ctx := context.Background()
-    res, err := s.SubaccountEmail.EmailRouterSendEmail(ctx, []byte("quibusdam"), "unde", false, "nulla")
+    res, err := s.SubaccountEmail.EmailRouterSendEmail(ctx, requestBody, xSubAccountAPIKey, xSendPostMockEmail, xSendPostMockTimeShift)
     if err != nil {
         log.Fatal(err)
     }
@@ -65,16 +69,18 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/spost-golang"
+	spostgolang "github.com/speakeasy-sdks/spost-golang"
 	"github.com/speakeasy-sdks/spost-golang/pkg/models/operations"
 	"github.com/speakeasy-sdks/spost-golang/pkg/models/shared"
 )
 
 func main() {
-    s := sendpost.New()
+    s := spostgolang.New()
+    requestBody := []byte("error")
+    xSubAccountAPIKey := "deserunt"
 
     ctx := context.Background()
-    res, err := s.SubaccountEmail.EmailRouterSendEmailWithTemplate(ctx, []byte("corrupti"), "illum")
+    res, err := s.SubaccountEmail.EmailRouterSendEmailWithTemplate(ctx, requestBody, xSubAccountAPIKey)
     if err != nil {
         log.Fatal(err)
     }
