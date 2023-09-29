@@ -14,10 +14,10 @@ import(
 
 func main() {
     s := spostgolang.New()
-    requestBody := []byte("corrupti")
-    xSubAccountAPIKey := "provident"
+    requestBody := []byte(":k13|`asY9")
+    xSubAccountAPIKey := "Northeast"
     xSendPostMockEmail := false
-    xSendPostMockTimeShift := "distinctio"
+    xSendPostMockTimeShift := "primary"
 
     ctx := context.Background()
     res, err := s.SubaccountEmail.EmailRouterSendEmail(ctx, requestBody, xSubAccountAPIKey, xSendPostMockEmail, xSendPostMockTimeShift)

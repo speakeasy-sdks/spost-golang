@@ -1,4 +1,5 @@
 # SubaccountEmail
+(*SubaccountEmail*)
 
 ### Available Operations
 
@@ -24,10 +25,10 @@ import(
 
 func main() {
     s := spostgolang.New()
-    requestBody := []byte("corrupti")
-    xSubAccountAPIKey := "illum"
+    requestBody := []byte(":k13|`asY9")
+    xSubAccountAPIKey := "Northeast"
     xSendPostMockEmail := false
-    xSendPostMockTimeShift := "vel"
+    xSendPostMockTimeShift := "primary"
 
     ctx := context.Background()
     res, err := s.SubaccountEmail.EmailRouterSendEmail(ctx, requestBody, xSubAccountAPIKey, xSendPostMockEmail, xSendPostMockTimeShift)
@@ -76,8 +77,8 @@ import(
 
 func main() {
     s := spostgolang.New()
-    requestBody := []byte("error")
-    xSubAccountAPIKey := "deserunt"
+    requestBody := []byte("9hY_GIO^\M")
+    xSubAccountAPIKey := "Kina"
 
     ctx := context.Background()
     res, err := s.SubaccountEmail.EmailRouterSendEmailWithTemplate(ctx, requestBody, xSubAccountAPIKey)
