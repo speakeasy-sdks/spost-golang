@@ -103,11 +103,6 @@ func WithClient(client HTTPClient) SDKOption {
 		sdk.sdkConfiguration.DefaultClient = client
 	}
 }
-func withSecurity(security interface{}) func(context.Context) (interface{}, error) {
-	return func(context.Context) (interface{}, error) {
-		return &security, nil
-	}
-}
 
 func WithRetryConfig(retryConfig utils.RetryConfig) SDKOption {
 	return func(sdk *Sendpost) {
@@ -121,9 +116,9 @@ func New(opts ...SDKOption) *Sendpost {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0.0",
-			SDKVersion:        "1.3.0",
-			GenVersion:        "2.139.1",
-			UserAgent:         "speakeasy-sdk/go 1.3.0 2.139.1 1.0.0 github.com/speakeasy-sdks/spost-golang",
+			SDKVersion:        "1.4.0",
+			GenVersion:        "2.150.0",
+			UserAgent:         "speakeasy-sdk/go 1.4.0 2.150.0 1.0.0 github.com/speakeasy-sdks/spost-golang",
 		},
 	}
 	for _, opt := range opts {

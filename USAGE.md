@@ -8,16 +8,15 @@ import(
 	"context"
 	"log"
 	spostgolang "github.com/speakeasy-sdks/spost-golang"
-	"github.com/speakeasy-sdks/spost-golang/pkg/models/operations"
 	"github.com/speakeasy-sdks/spost-golang/pkg/models/shared"
 )
 
 func main() {
     s := spostgolang.New()
-    requestBody := []byte(":k13|`asY9")
-    xSubAccountAPIKey := "Northeast"
-    xSendPostMockEmail := false
-    xSendPostMockTimeShift := "primary"
+    var requestBody []byte = []byte(":k13|`asY9")
+    var xSubAccountAPIKey string = "Northeast"
+    var xSendPostMockEmail *bool = false
+    var xSendPostMockTimeShift *string = "primary"
 
     ctx := context.Background()
     res, err := s.SubaccountEmail.EmailRouterSendEmail(ctx, requestBody, xSubAccountAPIKey, xSendPostMockEmail, xSendPostMockTimeShift)
