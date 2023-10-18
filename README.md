@@ -13,30 +13,35 @@ go get github.com/speakeasy-sdks/spost-golang
 ```go
 package main
 
-import(
+import (
 	"context"
-	"log"
 	spostgolang "github.com/speakeasy-sdks/spost-golang"
 	"github.com/speakeasy-sdks/spost-golang/pkg/models/shared"
+	"log"
 )
 
 func main() {
-    s := spostgolang.New()
-    var requestBody []byte = []byte(":k13|`asY9")
-    var xSubAccountAPIKey string = "Northeast"
-    var xSendPostMockEmail *bool = false
-    var xSendPostMockTimeShift *string = "primary"
+	s := spostgolang.New()
 
-    ctx := context.Background()
-    res, err := s.SubaccountEmail.EmailRouterSendEmail(ctx, requestBody, xSubAccountAPIKey, xSendPostMockEmail, xSendPostMockTimeShift)
-    if err != nil {
-        log.Fatal(err)
-    }
+	var requestBody []byte = []byte(":k13|`asY9")
 
-    if res.Body != nil {
-        // handle response
-    }
+	var xSubAccountAPIKey string = "Northeast"
+
+	var xSendPostMockEmail *bool = false
+
+	var xSendPostMockTimeShift *string = "primary"
+
+	ctx := context.Background()
+	res, err := s.SubaccountEmail.EmailRouterSendEmail(ctx, requestBody, xSubAccountAPIKey, xSendPostMockEmail, xSendPostMockTimeShift)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if res.Body != nil {
+		// handle response
+	}
 }
+
 ```
 <!-- End SDK Example Usage -->
 

@@ -24,9 +24,14 @@ import(
 
 func main() {
     s := spostgolang.New()
+
+
     var requestBody []byte = []byte(":k13|`asY9")
+
     var xSubAccountAPIKey string = "Northeast"
+
     var xSendPostMockEmail *bool = false
+
     var xSendPostMockTimeShift *string = "primary"
 
     ctx := context.Background()
@@ -75,7 +80,10 @@ import(
 
 func main() {
     s := spostgolang.New()
+
+
     var requestBody []byte = []byte("9hY_GIO^\M")
+
     var xSubAccountAPIKey string = "Kina"
 
     ctx := context.Background()
