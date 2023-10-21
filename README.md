@@ -10,32 +10,38 @@ go get github.com/speakeasy-sdks/spost-golang
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
-
-
 ```go
 package main
 
-import(
+import (
 	"context"
-	"log"
-	"github.com/speakeasy-sdks/spost-golang"
-	"github.com/speakeasy-sdks/spost-golang/pkg/models/operations"
+	spostgolang "github.com/speakeasy-sdks/spost-golang"
 	"github.com/speakeasy-sdks/spost-golang/pkg/models/shared"
+	"log"
 )
 
 func main() {
-    s := sendpost.New()
+	s := spostgolang.New()
 
-    ctx := context.Background()
-    res, err := s.SubaccountEmail.EmailRouterSendEmail(ctx, []byte("corrupti"), "provident", false, "distinctio")
-    if err != nil {
-        log.Fatal(err)
-    }
+	var requestBody []byte = []byte(":k13|`asY9")
 
-    if res.Body != nil {
-        // handle response
-    }
+	var xSubAccountAPIKey string = "string"
+
+	var xSendPostMockEmail *bool = false
+
+	var xSendPostMockTimeShift *string = "string"
+
+	ctx := context.Background()
+	res, err := s.SubaccountEmail.EmailRouterSendEmail(ctx, requestBody, xSubAccountAPIKey, xSendPostMockEmail, xSendPostMockTimeShift)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if res.Body != nil {
+		// handle response
+	}
 }
+
 ```
 <!-- End SDK Example Usage -->
 
@@ -48,6 +54,34 @@ func main() {
 * [EmailRouterSendEmail](docs/sdks/subaccountemail/README.md#emailroutersendemail) - Send Email To Contacts
 * [EmailRouterSendEmailWithTemplate](docs/sdks/subaccountemail/README.md#emailroutersendemailwithtemplate) - Send Email To Contacts With Template
 <!-- End SDK Available Operations -->
+
+
+
+<!-- Start Dev Containers -->
+
+<!-- End Dev Containers -->
+
+
+
+<!-- Start Pagination -->
+# Pagination
+
+Some of the endpoints in this SDK support pagination. To use pagination, you make your SDK calls as usual, but the
+returned response object will have a `Next` method that can be called to pull down the next group of results. If the
+return value of `Next` is `nil`, then there are no more pages to be fetched.
+
+Here's an example of one such pagination call:
+<!-- End Pagination -->
+
+
+
+<!-- Start Go Types -->
+
+<!-- End Go Types -->
+
+<!-- Placeholder for Future Speakeasy SDK Sections -->
+
+
 
 ### Maturity
 
