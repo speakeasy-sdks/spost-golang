@@ -25,11 +25,11 @@ func main() {
 
 	var requestBody []byte = []byte(":k13|`asY9")
 
-	var xSubAccountAPIKey string = "Northeast"
+	var xSubAccountAPIKey string = "string"
 
 	var xSendPostMockEmail *bool = false
 
-	var xSendPostMockTimeShift *string = "primary"
+	var xSendPostMockTimeShift *string = "string"
 
 	ctx := context.Background()
 	res, err := s.SubaccountEmail.EmailRouterSendEmail(ctx, requestBody, xSubAccountAPIKey, xSendPostMockEmail, xSendPostMockTimeShift)

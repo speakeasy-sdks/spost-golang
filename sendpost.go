@@ -116,9 +116,9 @@ func New(opts ...SDKOption) *Sendpost {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0.0",
-			SDKVersion:        "1.4.1",
-			GenVersion:        "2.161.0",
-			UserAgent:         "speakeasy-sdk/go 1.4.1 2.161.0 1.0.0 github.com/speakeasy-sdks/spost-golang",
+			SDKVersion:        "1.5.0",
+			GenVersion:        "2.169.0",
+			UserAgent:         "speakeasy-sdk/go 1.5.0 2.169.0 1.0.0 github.com/speakeasy-sdks/spost-golang",
 		},
 	}
 	for _, opt := range opts {
