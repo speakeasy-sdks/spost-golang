@@ -10,32 +10,38 @@ go get github.com/speakeasy-sdks/spost-golang
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
-
-
 ```go
 package main
 
-import(
+import (
 	"context"
-	"log"
-	"github.com/speakeasy-sdks/spost-golang"
-	"github.com/speakeasy-sdks/spost-golang/pkg/models/operations"
+	spostgolang "github.com/speakeasy-sdks/spost-golang"
 	"github.com/speakeasy-sdks/spost-golang/pkg/models/shared"
+	"log"
 )
 
 func main() {
-    s := sendpost.New()
+	s := spostgolang.New()
 
-    ctx := context.Background()
-    res, err := s.SubaccountEmail.EmailRouterSendEmail(ctx, []byte("corrupti"), "provident", false, "distinctio")
-    if err != nil {
-        log.Fatal(err)
-    }
+	var requestBody []byte = []byte(":k13|`asY9")
 
-    if res.Body != nil {
-        // handle response
-    }
+	var xSubAccountAPIKey string = "string"
+
+	var xSendPostMockEmail *bool = false
+
+	var xSendPostMockTimeShift *string = "string"
+
+	ctx := context.Background()
+	res, err := s.SubaccountEmail.EmailRouterSendEmail(ctx, requestBody, xSubAccountAPIKey, xSendPostMockEmail, xSendPostMockTimeShift)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if res.Body != nil {
+		// handle response
+	}
 }
+
 ```
 <!-- End SDK Example Usage -->
 
@@ -48,6 +54,160 @@ func main() {
 * [EmailRouterSendEmail](docs/sdks/subaccountemail/README.md#emailroutersendemail) - Send Email To Contacts
 * [EmailRouterSendEmailWithTemplate](docs/sdks/subaccountemail/README.md#emailroutersendemailwithtemplate) - Send Email To Contacts With Template
 <!-- End SDK Available Operations -->
+
+
+
+<!-- Start Dev Containers -->
+
+
+
+<!-- End Dev Containers -->
+
+
+
+<!-- Start Error Handling -->
+# Error Handling
+
+Handling errors in your SDK should largely match your expectations.  All operations return a response object or an error, they will never return both.  When specified by the OpenAPI spec document, the SDK will return the appropriate subclass.
+
+
+<!-- End Error Handling -->
+
+
+
+<!-- Start Server Selection -->
+# Server Selection
+
+## Select Server by Index
+
+You can override the default server globally using the `WithServerIndex` option when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
+
+| # | Server | Variables |
+| - | ------ | --------- |
+| 0 | `/api/v1` | None |
+
+For example:
+
+
+```go
+package main
+
+import (
+	"context"
+	spostgolang "github.com/speakeasy-sdks/spost-golang"
+	"github.com/speakeasy-sdks/spost-golang/pkg/models/shared"
+	"log"
+)
+
+func main() {
+	s := spostgolang.New(
+		spostgolang.WithServerIndex(0),
+	)
+
+	var requestBody []byte = []byte(":k13|`asY9")
+
+	var xSubAccountAPIKey string = "string"
+
+	var xSendPostMockEmail *bool = false
+
+	var xSendPostMockTimeShift *string = "string"
+
+	ctx := context.Background()
+	res, err := s.SubaccountEmail.EmailRouterSendEmail(ctx, requestBody, xSubAccountAPIKey, xSendPostMockEmail, xSendPostMockTimeShift)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if res.Body != nil {
+		// handle response
+	}
+}
+
+```
+
+
+## Override Server URL Per-Client
+
+The default server can also be overridden globally using the `WithServerURL` option when initializing the SDK client instance. For example:
+
+
+```go
+package main
+
+import (
+	"context"
+	spostgolang "github.com/speakeasy-sdks/spost-golang"
+	"github.com/speakeasy-sdks/spost-golang/pkg/models/shared"
+	"log"
+)
+
+func main() {
+	s := spostgolang.New(
+		spostgolang.WithServerURL("/api/v1"),
+	)
+
+	var requestBody []byte = []byte(":k13|`asY9")
+
+	var xSubAccountAPIKey string = "string"
+
+	var xSendPostMockEmail *bool = false
+
+	var xSendPostMockTimeShift *string = "string"
+
+	ctx := context.Background()
+	res, err := s.SubaccountEmail.EmailRouterSendEmail(ctx, requestBody, xSubAccountAPIKey, xSendPostMockEmail, xSendPostMockTimeShift)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if res.Body != nil {
+		// handle response
+	}
+}
+
+```
+<!-- End Server Selection -->
+
+
+
+<!-- Start Custom HTTP Client -->
+# Custom HTTP Client
+
+The Go SDK makes API calls that wrap an internal HTTP client. The requirements for the HTTP client are very simple. It must match this interface:
+
+```go
+type HTTPClient interface {
+	Do(req *http.Request) (*http.Response, error)
+}
+```
+
+The built-in `net/http` client satisfies this interface and a default client based on the built-in is provided by default. To replace this default with a client of your own, you can implement this interface yourself or provide your own client configured as desired. Here's a simple example, which adds a client with a 30 second timeout.
+
+```go
+import (
+	"net/http"
+	"time"
+	"github.com/myorg/your-go-sdk"
+)
+
+var (
+	httpClient = &http.Client{Timeout: 30 * time.Second}
+	sdkClient  = sdk.New(sdk.WithClient(httpClient))
+)
+```
+
+This can be a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration.
+<!-- End Custom HTTP Client -->
+
+
+
+<!-- Start Go Types -->
+
+<!-- End Go Types -->
+
+<!-- Placeholder for Future Speakeasy SDK Sections -->
+
+
 
 ### Maturity
 
