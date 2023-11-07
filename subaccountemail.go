@@ -6,26 +6,26 @@ import (
 	"bytes"
 	"context"
 	"fmt"
-	"github.com/speakeasy-sdks/spost-golang/pkg/models/operations"
-	"github.com/speakeasy-sdks/spost-golang/pkg/models/sdkerrors"
-	"github.com/speakeasy-sdks/spost-golang/pkg/utils"
+	"github.com/speakeasy-sdks/spost-golang/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/spost-golang/v2/pkg/models/sdkerrors"
+	"github.com/speakeasy-sdks/spost-golang/v2/pkg/utils"
 	"io"
 	"net/http"
 	"strings"
 )
 
-type subaccountEmail struct {
+type SubaccountEmail struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newSubaccountEmail(sdkConfig sdkConfiguration) *subaccountEmail {
-	return &subaccountEmail{
+func newSubaccountEmail(sdkConfig sdkConfiguration) *SubaccountEmail {
+	return &SubaccountEmail{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // EmailRouterSendEmail - Send Email To Contacts
-func (s *subaccountEmail) EmailRouterSendEmail(ctx context.Context, requestBody []byte, xSubAccountAPIKey string, xSendPostMockEmail *bool, xSendPostMockTimeShift *string) (*operations.EmailRouterSendEmailResponse, error) {
+func (s *SubaccountEmail) EmailRouterSendEmail(ctx context.Context, requestBody []byte, xSubAccountAPIKey string, xSendPostMockEmail *bool, xSendPostMockTimeShift *string) (*operations.EmailRouterSendEmailResponse, error) {
 	request := operations.EmailRouterSendEmailRequest{
 		RequestBody:            requestBody,
 		XSubAccountAPIKey:      xSubAccountAPIKey,
@@ -91,14 +91,19 @@ func (s *subaccountEmail) EmailRouterSendEmail(ctx context.Context, requestBody 
 		fallthrough
 	case httpRes.StatusCode == 422:
 		fallthrough
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
 	case httpRes.StatusCode == 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil
 }
 
 // EmailRouterSendEmailWithTemplate - Send Email To Contacts With Template
-func (s *subaccountEmail) EmailRouterSendEmailWithTemplate(ctx context.Context, requestBody []byte, xSubAccountAPIKey string) (*operations.EmailRouterSendEmailWithTemplateResponse, error) {
+func (s *SubaccountEmail) EmailRouterSendEmailWithTemplate(ctx context.Context, requestBody []byte, xSubAccountAPIKey string) (*operations.EmailRouterSendEmailWithTemplateResponse, error) {
 	request := operations.EmailRouterSendEmailWithTemplateRequest{
 		RequestBody:       requestBody,
 		XSubAccountAPIKey: xSubAccountAPIKey,
@@ -162,7 +167,12 @@ func (s *subaccountEmail) EmailRouterSendEmailWithTemplate(ctx context.Context, 
 		fallthrough
 	case httpRes.StatusCode == 422:
 		fallthrough
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
 	case httpRes.StatusCode == 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	}
 
 	return res, nil

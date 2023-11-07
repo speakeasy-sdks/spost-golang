@@ -1,4 +1,4 @@
-module github.com/speakeasy-sdks/spost-golang
+module github.com/speakeasy-sdks/spost-golang/v2
 
 go 1.14
 

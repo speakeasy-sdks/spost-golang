@@ -6,15 +6,15 @@ package main
 
 import (
 	"context"
-	spostgolang "github.com/speakeasy-sdks/spost-golang"
-	"github.com/speakeasy-sdks/spost-golang/pkg/models/shared"
+	spostgolang "github.com/speakeasy-sdks/spost-golang/v2"
+	"github.com/speakeasy-sdks/spost-golang/v2/pkg/models/shared"
 	"log"
 )
 
 func main() {
 	s := spostgolang.New()
 
-	var requestBody []byte = []byte(":k13|`asY9")
+	var requestBody []byte = []byte("0x6B34FffDd5")
 
 	var xSubAccountAPIKey string = "string"
 

@@ -4,14 +4,14 @@ package spostgolang
 
 import (
 	"fmt"
-	"github.com/speakeasy-sdks/spost-golang/pkg/utils"
+	"github.com/speakeasy-sdks/spost-golang/v2/pkg/utils"
 	"net/http"
 	"time"
 )
 
 // ServerList contains the list of servers available to the SDK
 var ServerList = []string{
-	"/api/v1",
+	"https:///api/v1",
 }
 
 // HTTPClient provides an interface for suplying the SDK with a custom HTTP client
@@ -61,7 +61,7 @@ func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
 
 // Sendpost - SendPost API: Email API and SMTP relay to not just send and measure email sending, but also alert and optimise. We provide you with tools, expertise and support needed to reliably deliver emails to your customers inboxes on time, every time.
 type Sendpost struct {
-	SubaccountEmail *subaccountEmail
+	SubaccountEmail *SubaccountEmail
 
 	sdkConfiguration sdkConfiguration
 }
@@ -116,9 +116,9 @@ func New(opts ...SDKOption) *Sendpost {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0.0",
-			SDKVersion:        "1.2.0",
-			GenVersion:        "2.173.0",
-			UserAgent:         "speakeasy-sdk/go 1.2.0 2.173.0 1.0.0 github.com/speakeasy-sdks/spost-golang",
+			SDKVersion:        "2.0.0",
+			GenVersion:        "2.181.1",
+			UserAgent:         "speakeasy-sdk/go 2.0.0 2.181.1 1.0.0 github.com/speakeasy-sdks/spost-golang",
 		},
 	}
 	for _, opt := range opts {

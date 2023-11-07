@@ -15,15 +15,15 @@ package main
 
 import (
 	"context"
-	spostgolang "github.com/speakeasy-sdks/spost-golang"
-	"github.com/speakeasy-sdks/spost-golang/pkg/models/shared"
+	spostgolang "github.com/speakeasy-sdks/spost-golang/v2"
+	"github.com/speakeasy-sdks/spost-golang/v2/pkg/models/shared"
 	"log"
 )
 
 func main() {
 	s := spostgolang.New()
 
-	var requestBody []byte = []byte(":k13|`asY9")
+	var requestBody []byte = []byte("0x6B34FffDd5")
 
 	var xSubAccountAPIKey string = "string"
 
@@ -49,7 +49,7 @@ func main() {
 ## Available Resources and Operations
 
 
-### [SubaccountEmail](docs/sdks/subaccountemail/README.md)
+### [.SubaccountEmail](docs/sdks/subaccountemail/README.md)
 
 * [EmailRouterSendEmail](docs/sdks/subaccountemail/README.md#emailroutersendemail) - Send Email To Contacts
 * [EmailRouterSendEmailWithTemplate](docs/sdks/subaccountemail/README.md#emailroutersendemailwithtemplate) - Send Email To Contacts With Template
@@ -59,8 +59,6 @@ func main() {
 
 <!-- Start Dev Containers -->
 
-
-
 <!-- End Dev Containers -->
 
 
@@ -69,8 +67,6 @@ func main() {
 # Error Handling
 
 Handling errors in your SDK should largely match your expectations.  All operations return a response object or an error, they will never return both.  When specified by the OpenAPI spec document, the SDK will return the appropriate subclass.
-
-
 <!-- End Error Handling -->
 
 
@@ -84,18 +80,17 @@ You can override the default server globally using the `WithServerIndex` option 
 
 | # | Server | Variables |
 | - | ------ | --------- |
-| 0 | `/api/v1` | None |
+| 0 | `https:///api/v1` | None |
 
 For example:
-
 
 ```go
 package main
 
 import (
 	"context"
-	spostgolang "github.com/speakeasy-sdks/spost-golang"
-	"github.com/speakeasy-sdks/spost-golang/pkg/models/shared"
+	spostgolang "github.com/speakeasy-sdks/spost-golang/v2"
+	"github.com/speakeasy-sdks/spost-golang/v2/pkg/models/shared"
 	"log"
 )
 
@@ -104,7 +99,7 @@ func main() {
 		spostgolang.WithServerIndex(0),
 	)
 
-	var requestBody []byte = []byte(":k13|`asY9")
+	var requestBody []byte = []byte("0x6B34FffDd5")
 
 	var xSubAccountAPIKey string = "string"
 
@@ -130,23 +125,22 @@ func main() {
 
 The default server can also be overridden globally using the `WithServerURL` option when initializing the SDK client instance. For example:
 
-
 ```go
 package main
 
 import (
 	"context"
-	spostgolang "github.com/speakeasy-sdks/spost-golang"
-	"github.com/speakeasy-sdks/spost-golang/pkg/models/shared"
+	spostgolang "github.com/speakeasy-sdks/spost-golang/v2"
+	"github.com/speakeasy-sdks/spost-golang/v2/pkg/models/shared"
 	"log"
 )
 
 func main() {
 	s := spostgolang.New(
-		spostgolang.WithServerURL("/api/v1"),
+		spostgolang.WithServerURL("https:///api/v1"),
 	)
 
-	var requestBody []byte = []byte(":k13|`asY9")
+	var requestBody []byte = []byte("0x6B34FffDd5")
 
 	var xSubAccountAPIKey string = "string"
 

@@ -1,5 +1,5 @@
 # SubaccountEmail
-(*SubaccountEmail*)
+(*.SubaccountEmail*)
 
 ### Available Operations
 
@@ -18,15 +18,15 @@ package main
 import(
 	"context"
 	"log"
-	spostgolang "github.com/speakeasy-sdks/spost-golang"
-	"github.com/speakeasy-sdks/spost-golang/pkg/models/shared"
+	spostgolang "github.com/speakeasy-sdks/spost-golang/v2"
+	"github.com/speakeasy-sdks/spost-golang/v2/pkg/models/shared"
 )
 
 func main() {
     s := spostgolang.New()
 
 
-    var requestBody []byte = []byte(":k13|`asY9")
+    var requestBody []byte = []byte("0x6B34FffDd5")
 
     var xSubAccountAPIKey string = "string"
 
@@ -74,15 +74,15 @@ package main
 import(
 	"context"
 	"log"
-	spostgolang "github.com/speakeasy-sdks/spost-golang"
-	"github.com/speakeasy-sdks/spost-golang/pkg/models/shared"
+	spostgolang "github.com/speakeasy-sdks/spost-golang/v2"
+	"github.com/speakeasy-sdks/spost-golang/v2/pkg/models/shared"
 )
 
 func main() {
     s := spostgolang.New()
 
 
-    var requestBody []byte = []byte("9hY_GIO^\M")
+    var requestBody []byte = []byte("0x5Ade99aeea")
 
     var xSubAccountAPIKey string = "string"
 
