@@ -49,7 +49,7 @@ func main() {
 ## Available Resources and Operations
 
 
-### [.SubaccountEmail](docs/sdks/subaccountemail/README.md)
+### [SubaccountEmail](docs/sdks/subaccountemail/README.md)
 
 * [EmailRouterSendEmail](docs/sdks/subaccountemail/README.md#emailroutersendemail) - Send Email To Contacts
 * [EmailRouterSendEmailWithTemplate](docs/sdks/subaccountemail/README.md#emailroutersendemailwithtemplate) - Send Email To Contacts With Template
@@ -66,7 +66,49 @@ func main() {
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or an error, they will never return both.  When specified by the OpenAPI spec document, the SDK will return the appropriate subclass.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or an error, they will never return both.  When specified by the OpenAPI spec document, the SDK will return the appropriate subclass.
+
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
+
+
+## Example
+
+```go
+package main
+
+import (
+	"context"
+	spostgolang "github.com/speakeasy-sdks/spost-golang/v2"
+	"github.com/speakeasy-sdks/spost-golang/v2/pkg/models/shared"
+	"log"
+)
+
+func main() {
+	s := spostgolang.New()
+
+	var requestBody []byte = []byte("0x6B34FffDd5")
+
+	var xSubAccountAPIKey string = "string"
+
+	var xSendPostMockEmail *bool = false
+
+	var xSendPostMockTimeShift *string = "string"
+
+	ctx := context.Background()
+	res, err := s.SubaccountEmail.EmailRouterSendEmail(ctx, requestBody, xSubAccountAPIKey, xSendPostMockEmail, xSendPostMockTimeShift)
+	if err != nil {
+
+		var e *sdkerrors.SDKError
+		if errors.As(err, &e) {
+			// handle error
+			log.Fatal(e.Error())
+		}
+	}
+}
+
+```
 <!-- End Error Handling -->
 
 

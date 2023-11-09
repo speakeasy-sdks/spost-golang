@@ -1,5 +1,5 @@
 # SubaccountEmail
-(*.SubaccountEmail*)
+(*SubaccountEmail*)
 
 ### Available Operations
 
@@ -59,8 +59,10 @@ func main() {
 
 ### Response
 
-**[*operations.EmailRouterSendEmailResponse](../../models/operations/emailroutersendemailresponse.md), error**
-
+**[*operations.EmailRouterSendEmailResponse](../../pkg/models/operations/emailroutersendemailresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
 
 ## EmailRouterSendEmailWithTemplate
 
@@ -109,5 +111,7 @@ func main() {
 
 ### Response
 
-**[*operations.EmailRouterSendEmailWithTemplateResponse](../../models/operations/emailroutersendemailwithtemplateresponse.md), error**
-
+**[*operations.EmailRouterSendEmailWithTemplateResponse](../../pkg/models/operations/emailroutersendemailwithtemplateresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 400-600            | */*                |
