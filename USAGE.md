@@ -1,13 +1,10 @@
 <!-- Start SDK Example Usage -->
-
-
 ```go
 package main
 
 import (
 	"context"
 	spostgolang "github.com/speakeasy-sdks/spost-golang/v2"
-	"github.com/speakeasy-sdks/spost-golang/v2/pkg/models/shared"
 	"log"
 )
 

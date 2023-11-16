@@ -16,10 +16,9 @@ Send Email To Contacts
 package main
 
 import(
+	spostgolang "github.com/speakeasy-sdks/spost-golang/v2"
 	"context"
 	"log"
-	spostgolang "github.com/speakeasy-sdks/spost-golang/v2"
-	"github.com/speakeasy-sdks/spost-golang/v2/pkg/models/shared"
 )
 
 func main() {
@@ -74,10 +73,9 @@ Send Email To Contacts With Template
 package main
 
 import(
+	spostgolang "github.com/speakeasy-sdks/spost-golang/v2"
 	"context"
 	"log"
-	spostgolang "github.com/speakeasy-sdks/spost-golang/v2"
-	"github.com/speakeasy-sdks/spost-golang/v2/pkg/models/shared"
 )
 
 func main() {
