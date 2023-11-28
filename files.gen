@@ -29,7 +29,6 @@ pkg/utils/utils.go
 /pkg/models/shared/modelsreplyto.go
 /pkg/models/shared/modelsfrom.go
 /pkg/models/shared/modelsattachment.go
-USAGE.md
 docs/pkg/models/operations/emailroutersendemailrequest.md
 docs/pkg/models/operations/emailroutersendemailresponse.md
 docs/pkg/models/operations/emailroutersendemailwithtemplaterequest.md
@@ -48,4 +47,5 @@ docs/pkg/models/shared/modelsfrom.md
 docs/pkg/models/shared/modelsattachment.md
 docs/sdks/sendpost/README.md
 docs/sdks/subaccountemail/README.md
+USAGE.md
 .gitattributes
