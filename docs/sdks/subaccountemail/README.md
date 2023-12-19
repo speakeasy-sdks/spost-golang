@@ -61,7 +61,7 @@ func main() {
 **[*operations.EmailRouterSendEmailResponse](../../pkg/models/operations/emailroutersendemailresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## EmailRouterSendEmailWithTemplate
 
@@ -112,4 +112,4 @@ func main() {
 **[*operations.EmailRouterSendEmailWithTemplateResponse](../../pkg/models/operations/emailroutersendemailwithtemplateresponse.md), error**
 | Error Object       | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
-| sdkerrors.SDKError | 400-600            | */*                |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
