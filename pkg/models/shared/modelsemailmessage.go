@@ -2,18 +2,18 @@
 
 package shared
 
-type ModelsEmailMessageGroups struct {
+type Groups struct {
 }
 
-type ModelsEmailMessageHeaders struct {
+type Headers struct {
 }
 
 type ModelsEmailMessage struct {
 	AmpBody     *string
 	Attachments []ModelsAttachment
 	From        *ModelsFrom
-	Groups      *ModelsEmailMessageGroups
-	Headers     *ModelsEmailMessageHeaders
+	Groups      *Groups
+	Headers     *Headers
 	HTMLBody    *string
 	Ippool      *string
 	PreText     *string
@@ -47,14 +47,14 @@ func (o *ModelsEmailMessage) GetFrom() *ModelsFrom {
 	return o.From
 }
 
-func (o *ModelsEmailMessage) GetGroups() *ModelsEmailMessageGroups {
+func (o *ModelsEmailMessage) GetGroups() *Groups {
 	if o == nil {
 		return nil
 	}
 	return o.Groups
 }
 
-func (o *ModelsEmailMessage) GetHeaders() *ModelsEmailMessageHeaders {
+func (o *ModelsEmailMessage) GetHeaders() *Headers {
 	if o == nil {
 		return nil
 	}

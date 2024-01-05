@@ -1,4 +1,4 @@
-# ModelsEmailMessageGroups
+# Groups
 
 
 ## Fields
