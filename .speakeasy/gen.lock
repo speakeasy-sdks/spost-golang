@@ -4,7 +4,7 @@ management:
   docChecksum: bd32215591e3a4d83fe2c9a136049547
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.234.3
+  generationVersion: 2.237.2
   releaseVersion: 2.1.2
   configChecksum: 89d61f2dc54d99afb41dcb1100d349f2
   repoURL: https://github.com/speakeasy-sdks/spost-golang.git
@@ -21,7 +21,6 @@ generatedFiles:
   - sendpost.go
   - go.mod
   - go.sum
-  - tests/helpers.go
   - pkg/models/sdkerrors/sdkerror.go
   - pkg/types/bigint.go
   - pkg/types/date.go
