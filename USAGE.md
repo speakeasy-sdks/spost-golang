@@ -4,7 +4,7 @@ package main
 
 import (
 	"context"
-	spostgolang "github.com/speakeasy-sdks/spost-golang/v2"
+	spostgolang "github.com/speakeasy-sdks/spost-golang/v3"
 	"log"
 )
 

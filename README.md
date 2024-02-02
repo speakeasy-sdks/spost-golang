@@ -18,7 +18,7 @@ package main
 
 import (
 	"context"
-	spostgolang "github.com/speakeasy-sdks/spost-golang/v2"
+	spostgolang "github.com/speakeasy-sdks/spost-golang/v3"
 	"log"
 )
 
@@ -77,8 +77,8 @@ package main
 import (
 	"context"
 	"errors"
-	spostgolang "github.com/speakeasy-sdks/spost-golang/v2"
-	"github.com/speakeasy-sdks/spost-golang/v2/pkg/models/sdkerrors"
+	spostgolang "github.com/speakeasy-sdks/spost-golang/v3"
+	"github.com/speakeasy-sdks/spost-golang/v3/pkg/models/sdkerrors"
 	"log"
 )
 
@@ -128,7 +128,7 @@ package main
 
 import (
 	"context"
-	spostgolang "github.com/speakeasy-sdks/spost-golang/v2"
+	spostgolang "github.com/speakeasy-sdks/spost-golang/v3"
 	"log"
 )
 
@@ -167,7 +167,7 @@ package main
 
 import (
 	"context"
-	spostgolang "github.com/speakeasy-sdks/spost-golang/v2"
+	spostgolang "github.com/speakeasy-sdks/spost-golang/v3"
 	"log"
 )
 

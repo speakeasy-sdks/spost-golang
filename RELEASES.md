@@ -123,3 +123,13 @@ Based on:
 - [go v2.1.2] .
 ### Releases
 - [Go v2.1.2] https://github.com/speakeasy-sdks/spost-golang/releases/tag/v2.1.2 - .
+
+## 2024-02-02 00:01:26
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 
+- Speakeasy CLI 1.163.1 (2.248.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [go v3.0.0] .
+### Releases
+- [Go v3.0.0] https://github.com/speakeasy-sdks/spost-golang/releases/tag/v3.0.0 - .
