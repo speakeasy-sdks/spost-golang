@@ -29,9 +29,9 @@ func main() {
 
 	var xSubAccountAPIKey string = "string"
 
-	var xSendPostMockEmail *bool = false
+	var xSendPostMockEmail *bool = spostgolang.Bool(false)
 
-	var xSendPostMockTimeShift *string = "string"
+	var xSendPostMockTimeShift *string = spostgolang.String("string")
 
 	ctx := context.Background()
 	res, err := s.SubaccountEmail.EmailRouterSendEmail(ctx, requestBody, xSubAccountAPIKey, xSendPostMockEmail, xSendPostMockTimeShift)
@@ -89,9 +89,9 @@ func main() {
 
 	var xSubAccountAPIKey string = "string"
 
-	var xSendPostMockEmail *bool = false
+	var xSendPostMockEmail *bool = spostgolang.Bool(false)
 
-	var xSendPostMockTimeShift *string = "string"
+	var xSendPostMockTimeShift *string = spostgolang.String("string")
 
 	ctx := context.Background()
 	res, err := s.SubaccountEmail.EmailRouterSendEmail(ctx, requestBody, xSubAccountAPIKey, xSendPostMockEmail, xSendPostMockTimeShift)
@@ -141,9 +141,9 @@ func main() {
 
 	var xSubAccountAPIKey string = "string"
 
-	var xSendPostMockEmail *bool = false
+	var xSendPostMockEmail *bool = spostgolang.Bool(false)
 
-	var xSendPostMockTimeShift *string = "string"
+	var xSendPostMockTimeShift *string = spostgolang.String("string")
 
 	ctx := context.Background()
 	res, err := s.SubaccountEmail.EmailRouterSendEmail(ctx, requestBody, xSubAccountAPIKey, xSendPostMockEmail, xSendPostMockTimeShift)
@@ -180,9 +180,9 @@ func main() {
 
 	var xSubAccountAPIKey string = "string"
 
-	var xSendPostMockEmail *bool = false
+	var xSendPostMockEmail *bool = spostgolang.Bool(false)
 
-	var xSendPostMockTimeShift *string = "string"
+	var xSendPostMockTimeShift *string = spostgolang.String("string")
 
 	ctx := context.Background()
 	res, err := s.SubaccountEmail.EmailRouterSendEmail(ctx, requestBody, xSubAccountAPIKey, xSendPostMockEmail, xSendPostMockTimeShift)
