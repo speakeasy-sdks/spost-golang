@@ -27,11 +27,11 @@ func main() {
 
 	var requestBody []byte = []byte("0x6B34FffDd5")
 
-	var xSubAccountAPIKey string = "string"
+	var xSubAccountAPIKey string = "<value>"
 
 	var xSendPostMockEmail *bool = spostgolang.Bool(false)
 
-	var xSendPostMockTimeShift *string = spostgolang.String("string")
+	var xSendPostMockTimeShift *string = spostgolang.String("<value>")
 
 	ctx := context.Background()
 	res, err := s.SubaccountEmail.EmailRouterSendEmail(ctx, requestBody, xSubAccountAPIKey, xSendPostMockEmail, xSendPostMockTimeShift)
@@ -87,11 +87,11 @@ func main() {
 
 	var requestBody []byte = []byte("0x6B34FffDd5")
 
-	var xSubAccountAPIKey string = "string"
+	var xSubAccountAPIKey string = "<value>"
 
 	var xSendPostMockEmail *bool = spostgolang.Bool(false)
 
-	var xSendPostMockTimeShift *string = spostgolang.String("string")
+	var xSendPostMockTimeShift *string = spostgolang.String("<value>")
 
 	ctx := context.Background()
 	res, err := s.SubaccountEmail.EmailRouterSendEmail(ctx, requestBody, xSubAccountAPIKey, xSendPostMockEmail, xSendPostMockTimeShift)
@@ -139,11 +139,11 @@ func main() {
 
 	var requestBody []byte = []byte("0x6B34FffDd5")
 
-	var xSubAccountAPIKey string = "string"
+	var xSubAccountAPIKey string = "<value>"
 
 	var xSendPostMockEmail *bool = spostgolang.Bool(false)
 
-	var xSendPostMockTimeShift *string = spostgolang.String("string")
+	var xSendPostMockTimeShift *string = spostgolang.String("<value>")
 
 	ctx := context.Background()
 	res, err := s.SubaccountEmail.EmailRouterSendEmail(ctx, requestBody, xSubAccountAPIKey, xSendPostMockEmail, xSendPostMockTimeShift)
@@ -178,11 +178,11 @@ func main() {
 
 	var requestBody []byte = []byte("0x6B34FffDd5")
 
-	var xSubAccountAPIKey string = "string"
+	var xSubAccountAPIKey string = "<value>"
 
 	var xSendPostMockEmail *bool = spostgolang.Bool(false)
 
-	var xSendPostMockTimeShift *string = spostgolang.String("string")
+	var xSendPostMockTimeShift *string = spostgolang.String("<value>")
 
 	ctx := context.Background()
 	res, err := s.SubaccountEmail.EmailRouterSendEmail(ctx, requestBody, xSubAccountAPIKey, xSendPostMockEmail, xSendPostMockTimeShift)
