@@ -57,12 +57,12 @@ func (s *SubaccountEmail) EmailRouterSendEmail(ctx context.Context, requestBody 
 
 	utils.PopulateHeaders(ctx, req, request)
 
-	client := s.sdkConfiguration.DefaultClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.DefaultClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -85,7 +85,6 @@ func (s *SubaccountEmail) EmailRouterSendEmail(ctx context.Context, requestBody 
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.EmailRouterSendEmailResponse{
@@ -154,12 +153,12 @@ func (s *SubaccountEmail) EmailRouterSendEmailWithTemplate(ctx context.Context, 
 
 	utils.PopulateHeaders(ctx, req, request)
 
-	client := s.sdkConfiguration.DefaultClient
-
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
 		return nil, err
 	}
+
+	client := s.sdkConfiguration.DefaultClient
 
 	httpRes, err := client.Do(req)
 	if err != nil || httpRes == nil {
@@ -182,7 +181,6 @@ func (s *SubaccountEmail) EmailRouterSendEmailWithTemplate(ctx context.Context, 
 			return nil, err
 		}
 	}
-
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.EmailRouterSendEmailWithTemplateResponse{
