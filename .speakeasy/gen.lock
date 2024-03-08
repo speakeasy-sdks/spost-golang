@@ -3,19 +3,20 @@ id: 86c3d175-3018-4ca2-b1cf-b40a57752c44
 management:
   docChecksum: bd32215591e3a4d83fe2c9a136049547
   docVersion: 1.0.0
-  speakeasyVersion: internal
-  generationVersion: 2.272.4
-  releaseVersion: 3.1.2
-  configChecksum: 45624c83c108afc34009c1dbb2c5aef7
+  speakeasyVersion: 1.204.1
+  generationVersion: 2.279.1
+  releaseVersion: 3.2.0
+  configChecksum: e7b1117b327975bc9cf927afc3fcc080
   repoURL: https://github.com/speakeasy-sdks/spost-golang.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/spost-golang
   published: true
 features:
   go:
-    core: 3.4.3
+    core: 3.4.4
     flattening: 2.81.1
     globalServerURLs: 2.82.1
+    responseFormat: 0.1.0
 generatedFiles:
   - subaccountemail.go
   - sendpost.go
