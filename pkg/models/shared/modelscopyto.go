@@ -2,16 +2,16 @@
 
 package shared
 
-type ModelsCopyToCustomFields struct {
+type CustomFields struct {
 }
 
 type ModelsCopyTo struct {
-	CustomFields *ModelsCopyToCustomFields
+	CustomFields *CustomFields
 	Email        *string
 	Name         *string
 }
 
-func (o *ModelsCopyTo) GetCustomFields() *ModelsCopyToCustomFields {
+func (o *ModelsCopyTo) GetCustomFields() *CustomFields {
 	if o == nil {
 		return nil
 	}

@@ -1,4 +1,5 @@
 # SubaccountEmail
+(*SubaccountEmail*)
 
 ### Available Operations
 
@@ -15,22 +16,28 @@ Send Email To Contacts
 package main
 
 import(
+	spostgolang "github.com/speakeasy-sdks/spost-golang/v3"
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/spost-golang"
-	"github.com/speakeasy-sdks/spost-golang/pkg/models/operations"
-	"github.com/speakeasy-sdks/spost-golang/pkg/models/shared"
 )
 
 func main() {
-    s := sendpost.New()
+    s := spostgolang.New()
+
+
+    var requestBody []byte = []byte("0x6B34FffDd5")
+
+    var xSubAccountAPIKey string = "<value>"
+
+    var xSendPostMockEmail *bool = spostgolang.Bool(false)
+
+    var xSendPostMockTimeShift *string = spostgolang.String("<value>")
 
     ctx := context.Background()
-    res, err := s.SubaccountEmail.EmailRouterSendEmail(ctx, []byte("quibusdam"), "unde", false, "nulla")
+    res, err := s.SubaccountEmail.EmailRouterSendEmail(ctx, requestBody, xSubAccountAPIKey, xSendPostMockEmail, xSendPostMockTimeShift)
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Body != nil {
         // handle response
     }
@@ -50,8 +57,10 @@ func main() {
 
 ### Response
 
-**[*operations.EmailRouterSendEmailResponse](../../models/operations/emailroutersendemailresponse.md), error**
-
+**[*operations.EmailRouterSendEmailResponse](../../pkg/models/operations/emailroutersendemailresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
 
 ## EmailRouterSendEmailWithTemplate
 
@@ -63,22 +72,24 @@ Send Email To Contacts With Template
 package main
 
 import(
+	spostgolang "github.com/speakeasy-sdks/spost-golang/v3"
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/spost-golang"
-	"github.com/speakeasy-sdks/spost-golang/pkg/models/operations"
-	"github.com/speakeasy-sdks/spost-golang/pkg/models/shared"
 )
 
 func main() {
-    s := sendpost.New()
+    s := spostgolang.New()
+
+
+    var requestBody []byte = []byte("0x5Ade99aeea")
+
+    var xSubAccountAPIKey string = "<value>"
 
     ctx := context.Background()
-    res, err := s.SubaccountEmail.EmailRouterSendEmailWithTemplate(ctx, []byte("corrupti"), "illum")
+    res, err := s.SubaccountEmail.EmailRouterSendEmailWithTemplate(ctx, requestBody, xSubAccountAPIKey)
     if err != nil {
         log.Fatal(err)
     }
-
     if res.Body != nil {
         // handle response
     }
@@ -96,5 +107,7 @@ func main() {
 
 ### Response
 
-**[*operations.EmailRouterSendEmailWithTemplateResponse](../../models/operations/emailroutersendemailwithtemplateresponse.md), error**
-
+**[*operations.EmailRouterSendEmailWithTemplateResponse](../../pkg/models/operations/emailroutersendemailwithtemplateresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |
